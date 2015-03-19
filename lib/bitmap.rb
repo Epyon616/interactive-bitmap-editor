@@ -13,4 +13,8 @@ class Bitmap
   def get_pixel_colour(x,y)
     @pixels[x - 1][y - 1]
   end
+
+  def set_pixel_colour(x,y,colour)
+    @pixels[x - 1][y - 1] = colour
+  end
 end
