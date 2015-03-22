@@ -44,4 +44,18 @@ describe "Bitmap" do
     it { expect(subject.get_pixel_colour(1, 2)).to eql("C") }
     it { expect(subject.get_pixel_colour(2, 2)).to eql("C") }
   end
+
+
+  describe "#fill_region" do
+    let(:large_bitmap) { Bitmap.new(4, 4) }
+
+    before do
+      large_bitmap.draw_horizontal_segment(2, 2, 3, "R")
+      large_bitmap.draw_horizontal_segment(3, 2, 3, "R")
+      large_bitmap.fill_region(2, 3, "C")
+    end
+
+    it { expect(large_bitmap.get_pixel_colour(2, 2)).to eql("C") }
+    it { expect(large_bitmap.get_pixel_colour(2, 3)).to eql("C") }
+  end
 end
