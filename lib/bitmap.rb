@@ -22,4 +22,7 @@ class Bitmap
     (from_row..to_row).each{ |row| set_pixel_colour(col, row, colour) }
   end
 
+  def draw_horizontal_segment(row, from_col, to_col, colour)
+    (from_col..to_col).each{ |col| set_pixel_colour(col, row, colour) }
+  end
 end
