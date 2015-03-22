@@ -29,8 +29,11 @@ describe "Bitmap" do
     it { expect(subject.get_pixel_colour(2,2)).to eql("C") }
   end
 
-  describe "Draw a vertical segment of colour 'C' in column 'X' between rows 'Y1' and 'Y2'" do
-    pending
+  describe "#draw_vertical_segment" do
+    before { subject.draw_vertical_segment(2, 1, 2, "C") }
+
+    it { expect(subject.get_pixel_colour(1, 2)).to eql("C") }
+    it { expect(subject.get_pixel_colour(2 ,2)).to eql("C") }
   end
 
   describe "Draw a horizontal segment of colour 'C' in row 'Y' between columns 'X1' and 'X2'" do

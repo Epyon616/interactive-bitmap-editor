@@ -7,7 +7,7 @@ class Bitmap
   end
 
   def clear
-    @pixels = (1..@rows).map{ (1..@cols).map{"O"}}
+    @pixels = (1..@rows).map{ (1..@cols).map{"O"} }
   end
 
   def get_pixel_colour(x,y)
@@ -15,6 +15,11 @@ class Bitmap
   end
 
   def set_pixel_colour(x,y,colour)
-    @pixels[x - 1][y - 1] = colour
+    @pixels[y - 1][x - 1] = colour
   end
+
+  def draw_vertical_segment(col, from_row, to_row, colour)
+    (from_row..to_row).each{ |row| set_pixel_colour(col, row, colour) }
+  end
+
 end
