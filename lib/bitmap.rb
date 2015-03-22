@@ -42,4 +42,8 @@ class Bitmap
     flood_fill(x, y + 1, old_colour, new_colour) if (1..@rows).cover?(y)
     flood_fill(x, y - 1, old_colour, new_colour) if (1..@rows).cover?(y)
   end
+
+  def show
+    print self
+  end
 end
