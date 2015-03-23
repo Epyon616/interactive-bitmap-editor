@@ -44,6 +44,7 @@ class Bitmap
   end
 
   def show
-    print self
+    bitmap = @pixels.map{|row| row.join(' ') }.join("\n") + "\n"
+    print bitmap
   end
 end
