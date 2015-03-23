@@ -54,6 +54,17 @@ JJJJJ
 When implementing this program focus on quality and best practices. DO NOT RUSH! It's not a speed test. Make sure the program works with odd input and doesn't crash.
 After implementing the required features, please implement a feature you think would make this program better/more useful and describe it in a README file.
 
-# Submission
+# Pattern feature
 
-Please submit a fully completed answer within the time allowed. Please provide source code and full GIT repository. Please commit often and with good commit messages. That will allow us to see how you've approached the problem. Don't worry about changing things around often.
+to use this feature follow the example below
+```
+> I 5 6
+> P 2 B
+> S
+B O B O B
+B O B O B
+B O B O B
+B O B O B
+B O B O B
+B O B O B
+```
