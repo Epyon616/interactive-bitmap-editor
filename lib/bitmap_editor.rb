@@ -30,6 +30,8 @@ class BitmapEditor
       paint_region
     when "S"
       @bitmap.show
+    when "P"
+      paint_pattern(*args)
     end
   end
 
@@ -60,6 +62,12 @@ class BitmapEditor
     no_method_error if @bitmap.nil?
     argument_error if args.count != 3
     @bitmap.fill_region(*args)
+  end
+
+  def paint_pattern(*args)
+    no_method_error if @bitmap.nil?
+    argument_error if args.count != 2
+    @bitmap.pattern(*args)
   end
 
   def no_method_error

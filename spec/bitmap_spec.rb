@@ -57,4 +57,12 @@ describe "Bitmap" do
     it { expect(large_bitmap.get_pixel_colour(2, 2)).to eql("C") }
     it { expect(large_bitmap.get_pixel_colour(2, 3)).to eql("C") }
   end
+
+  describe "#pattern" do
+    before { large_bitmap.pattern(2, "C") }
+    it { expect(large_bitmap.get_pixel_colour(1, 2)).to eql("C") }
+    it { expect(large_bitmap.get_pixel_colour(2, 2)).to eql("O") }
+    it { expect(large_bitmap.get_pixel_colour(3, 2)).to eql("C") }
+    it { expect(large_bitmap.get_pixel_colour(4, 2)).to eql("O") }
+  end
 end

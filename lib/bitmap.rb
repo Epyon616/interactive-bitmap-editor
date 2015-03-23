@@ -47,4 +47,14 @@ class Bitmap
     bitmap = @pixels.map{|row| row.join(' ') }.join("\n") + "\n"
     print bitmap
   end
+
+  def pattern(separation, colour)
+    (1..@cols).map.with_index do |x, i|
+      (1..@rows).map do |y|
+        if i.modulo(separation).zero?
+          set_pixel_colour(x, y, colour)
+        end
+      end
+    end
+  end
 end
